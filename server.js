@@ -38,6 +38,6 @@ server.on('error', (err) => {
   console.error('Server error:', err);
 });
 
-server.listen(8080, () => {
+server.listen(PORT, () => {
   console.log('RPS started on 8080');
 });
