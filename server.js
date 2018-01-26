@@ -8,7 +8,7 @@ const RpsGame = require('./rps-game');
 
 const app = express();
 
-const clientPath = `${__dirname}/../client`;
+const clientPath = `${__dirname}/client`;
 console.log(`Serving static from ${clientPath}`);
 
 app.use(express.static(clientPath));
