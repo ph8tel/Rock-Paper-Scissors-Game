@@ -1,4 +1,4 @@
-
+//Socket Basked RPS Game
 class RpsGame {
 
   constructor(p1, p2) {
