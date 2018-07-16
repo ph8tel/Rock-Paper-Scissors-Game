@@ -8,8 +8,12 @@ const writeEvent = (text) => {
   el.innerHTML = text;
 
   parent.appendChild(el);
+  updateScroll();
 };
-
+const  updateScroll = () => {
+  var element = document.getElementById("events");
+  element.scrollTop = element.scrollHeight;
+}
 const onFormSubmitted = (e) => {
   e.preventDefault();
 
