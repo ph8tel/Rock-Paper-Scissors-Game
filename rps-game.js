@@ -4,16 +4,16 @@ class RpsGame {
   constructor(p1, p2) {
     this._players = [p1, p2];
     this._turns = [null, null];
-
+    //message the players that the game is starting!
     this._sendToPlayers('Rock Paper Scissors Starts!');
-
+    //give each player a term by iterating through the players array
     this._players.forEach((player, idx) => {
       player.on('turn', (turn) => {
         this._onTurn(idx, turn);
       });
     });
   }
-
+  //emits a message to the player
   _sendToPlayer(playerIndex, msg) {
     this._players[playerIndex].emit('message', msg);
   }
@@ -38,7 +38,7 @@ class RpsGame {
       this._sendToPlayers('Game over ' + turns.join(' : '));
       this._getGameResult();
       this._turns = [null, null];
-      this._sendToPlayers('Next Round!!!!');
+      this._sendToPlayers('Next Round!');
     }
   }
 
@@ -51,7 +51,7 @@ class RpsGame {
 
     switch (distance) {
       case 0:
-        this._sendToPlayers('Draw!');
+        this._sendToPlayers('Shoot!');
         break;
 
       case 1:
@@ -78,7 +78,7 @@ class RpsGame {
       case 'paper':
         return 2;
       default:
-        throw new Error(`Could not decode turn ${turn}`);
+        throw new Error(`What does ${turn} mean?`);
     }
   }
 

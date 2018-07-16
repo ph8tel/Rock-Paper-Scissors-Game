@@ -33,7 +33,7 @@ const addButtonListeners = () => {
   });
 };
 
-writeEvent('Welcome to RPS');
+writeEvent('Shall we play a game?');
 
 const sock = io();
 sock.on('message', writeEvent);
